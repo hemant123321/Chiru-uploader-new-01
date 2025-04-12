@@ -47,7 +47,96 @@ api_url = "http://master-api-v3.vercel.app/"
 api_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNzkxOTMzNDE5NSIsInRnX3VzZXJuYW1lIjoi4p61IFtvZmZsaW5lXSIsImlhdCI6MTczODY5MjA3N30.SXzZ1MZcvMp5sGESj0hBKSghhxJ3k1GTWoBUbivUe1I"
 token_cp ='eyJjb3Vyc2VJZCI6IjQ1NjY4NyIsInR1dG9ySWQiOm51bGwsIm9yZ0lkIjo0ODA2MTksImNhdGVnb3J5SWQiOm51bGx9r'
 
-@bot.on_message(filters.command("start"))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+import random
+
+# Inline keyboard for start command
+keyboard = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(text="📞 Contact", url="https://t.me/ROWDYOFFICIALBOT"),
+            InlineKeyboardButton(text="🔍 Channel", url="https://t.me/+7dyGkwBfH99iODU9"),
+        ],
+    ]
+)
+# Image URLs for the random image feature
+image_urls = [
+    
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    # Add more image URLs as needed
+]
+# Start command handler
+@bot.on_message(filters.command(["start"]))
+async def start_command(bot: Client, message: Message):
+    # Send a loading message
+    loading_message = await bot.send_message(
+        chat_id=message.chat.id,
+        text="Loading... ⏳🔄"
+    )
+  
+    # Choose a random image URL
+    random_image_url = random.choice(image_urls)
+    
+    # Caption for the image
+    caption = ("""
+<blockquote>🌟 <b>Welcome Boss ☠️!</b> 🌟</blockquote><br><br>
+
+You are currently using the <b>free version</b>. 🆓<br><br>
+
+I'm here to make your life easier by downloading videos from your <b>.txt file</b> 📄 and uploading them directly to Telegram!<br><br>
+
+Want to get started? 🌟<br>
+Contact <a href="https://t.me/ROWDYOFFICIALBOT">—͟͞͞ ᏒᎧᏇᎠᎽ</a> to Get The Subscription 🎫<br>
+and unlock the full potential of your new bot! 🔓
+""")
+    await asyncio.sleep(1)
+    await loading_message.edit_text(
+        "Initializing Uploader bot... 🤖\n\n"
+        "Progress: ⬜⬜⬜⬜⬜⬜⬜⬜⬜ 0%\n\n"
+    )
+
+    await asyncio.sleep(1)
+    await loading_message.edit_text(
+        "Loading features... ⏳\n\n"
+        "Progress: 🟥🟥⬜⬜⬜⬜⬜⬜ 25%\n\n"
+    )
+    
+    await asyncio.sleep(1)
+    await loading_message.edit_text(
+        "This may take a moment, sit back and relax! 😊\n\n"
+        "Progress: 🟧🟧🟧🟧⬜⬜⬜⬜ 50%\n\n"
+    )
+
+    await asyncio.sleep(1)
+    await loading_message.edit_text(
+        "Checking Bot Status... 🔍\n\n"
+        "Progress: 🟨🟨🟨🟨🟨🟨⬜⬜ 75%\n\n"
+    )
+
+    await asyncio.sleep(1)
+    await loading_message.edit_text(
+        "Checking Bot Status... 🔍\n\n"
+        "Progress:🟩🟩🟩🟩🟩🟩🟩🟩🟩 100%\n\n"
+    )
+        
+    # Send the image with caption and buttons
+    await bot.send_photo(
+        chat_id=message.chat.id,
+        photo=random_image_url,
+        caption=caption.format(message.from_user.mention),
+        reply_markup=keyboard
+    )
+
+    # Delete the loading message
+    await loading_message.delete()
+
+@bot.on_message(filters.command("drm"))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 async def account_login(bot: Client, m: Message):                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     await m.reply_text('''🎉 <b>Welcome to DRM Bot! </b>🎉
     
@@ -264,7 +353,7 @@ async def restart_handler(_, m):
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-@bot.on_message(filters.command("drm")) # & filters.private)
+@bot.on_message(filters.command("txt")) # & filters.private)
 async def account_login(bot: Client, m: Message):
     #if m.chat.type == "private":
     user_id = str(m.from_user.id)
