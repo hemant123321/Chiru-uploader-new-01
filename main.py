@@ -164,26 +164,28 @@ async def start_command(bot: Client, message: Message):
 
 @bot.on_message(filters.command("drm"))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 async def account_login(bot: Client, m: Message):                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-    await m.reply_text(🎉 <pre>Welcome to DRM Bot! </pre>🎉
+    await m.reply_text('''🎉 <b>Welcome to DRM Bot! </b>🎉
     
 <b>You can have access to download all Non-DRM+Decrypted DRM Bot 🔐 including:</b>
-   ```• 📚 **Appx Zip**
-   • 🎓 **Classplus DRM+ NDRM**
-   • 🧑‍🏫 **PhysicsWallah DRM**
-   • 📚 **CareerWill + PDF**
-   • 🎓 **Khan GS**
-   • 🎓 **Study Iq DRM**
-   • 🚀 **APPX + APPX DEC PDF**
-   • 🎓 **Vimeo Protection**
-   • 🎓 **Brightcove Protection**
-   • 🎓 **Visionias Protection**
-   • 🎓 **Zoom Video**
-   • 🎓 **All Non DRM+DEC DRM**
-   • 🎓 **MPD URLs if the key is known (e.g., Mpd_url?key=key XX:XX)**```
+<blockquote><i>
+   • 📚 Appx Zip
+   • 🎓 Classplus DRM+ NDRM
+   • 🧑‍🏫 PhysicsWallah DRM
+   • 📚 CareerWill + PDF
+   • 🎓 Khan GS
+   • 🎓 Study Iq DRM
+   • 🚀 APPX + APPX DEC PDF
+   • 🎓 Vimeo Protection
+   • 🎓 Brightcove Protection
+   • 🎓 Visionias Protection
+   • 🎓 Zoom Video
+   • 🎓 All Non DRM+DEC DRM
+   • 🎓 MPD URLs if the key is known (e.g., Mpd_url?key=key XX:XX)
+</blockquote></i>
 <b>🚀 You are not subscribed to any plan yet!</b>
 
-<blockquote><i>💵 Monthly Plan: ₹ 🅵︎🆁︎🅴︎🅴︎</blockquote></i>
-<b>If you want to buy membership of the bot, feel free to contact the Bot\n\n**╭━━━━━━━━━◆✯◆━━━━━━━━━╮**\n**⚡ MADE BY : [...🅧︎Ⓨ︎🅩... 🦁](t.me/XYZOFFICALBOT)**\n**╰━━━━━━━━━◇✯◇━━━━━━━━━╯**)
+<blockquote><i>💵 Monthly Plan: ₹ 400</blockquote></i>
+<b>If you want to buy membership of the bot, feel free to contact the Bot\n\n**╭━━━━━━━━━◆✯◆━━━━━━━━━╮**\n**⚡ MADE BY : [...🅧︎Ⓨ︎🅩... 🦁](t.me/XYZOFFICALBOT)**\n**╰━━━━━━━━━◇✯◇━━━━━━━━━╯**''')
 # File paths
 SUBSCRIPTION_FILE = "subscription_data.txt"
 
