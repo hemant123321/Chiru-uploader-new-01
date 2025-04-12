@@ -111,7 +111,7 @@ async def start_command(bot: Client, message: Message):
 """<blockquote> 🌟 Hello Boss 😎 {0}🌟</blockquote>\n\n"""
         "➽ **/drm - ⚔️ all Non-DRM+Decrypted DRM Bot 🔐 including**\n"
         "➽ **/id - Command - Show Group/Channel 🆔**\n"
-        "➽ **/adduser - Only use owner 👨‍✈️**\n\n"
+        "➽ **/adduser - Only use owner 👨‍✈️**\n"
         "➽ **/removeuser - Only use owner 👨‍✈️**\n"
         "➽ **/add_channel - Only use owner 👨‍✈️**\n"
         "➽ **/remove_channel - Only use owner 👨‍✈️**\n"
