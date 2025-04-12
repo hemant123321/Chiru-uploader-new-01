@@ -107,17 +107,20 @@ async def start_command(bot: Client, message: Message):
     random_image_url = random.choice(image_urls)
     
     # Caption for the image
-    caption = ("""
-<blockquote>🌟 <b>Welcome Boss ☠️!</b> 🌟</blockquote><br><br>
-
-You are currently using the <b>free version</b>. 🆓<br><br>
-
-I'm here to make your life easier by downloading videos from your <b>.txt file</b> 📄 and uploading them directly to Telegram!<br><br>
-
-Want to get started? 🌟<br>
-Contact <a href="https://t.me/ROWDYOFFICIALBOT">—͟͞͞ ᏒᎧᏇᎠᎽ</a> to Get The Subscription 🎫<br>
-and unlock the full potential of your new bot! 🔓
-""")
+    caption = (
+"""<blockquote> 🌟 Hello Boss 😎 {0}🌟</blockquote>\n\n"""
+        "➽ **/drm - ⚔️ all Non-DRM+Decrypted DRM Bot 🔐 including**\n"
+        "➽ **/id Command - Show Group/Channel 🆔**\n"
+        "➽ **/adduser - Only use owner 👨‍✈️**\n\n"
+        "➽ **/removeuser - Only use owner 👨‍✈️**\n"
+        "➽ **/add_channel - Only use owner 👨‍✈️**\n"
+        "➽ **/remove_channel - Only use owner 👨‍✈️**\n"
+        "➽ **/users - Only use owner 👨‍✈️**\n"
+        "➽ **/myplan - expiration_date 📅**\n"
+        "➽ **/stop - working process Command**\n"
+        "➽ **/txt - Command Use To Download  Data From TXT File 🗃️** \n\n"
+        "**╭━━━━━━━━━◆✯◆━━━━━━━━━╮**\n**⚡ MADE BY : [...🅧︎Ⓨ︎🅩... 🦁](t.me/XYZOFFICALBOT)**\n**╰━━━━━━━━━◇✯◇━━━━━━━━━╯**\n\n"
+)
     await asyncio.sleep(1)
     await loading_message.edit_text(
         "Initializing Uploader bot... 🤖\n\n"
