@@ -702,7 +702,7 @@ async def account_login(bot: Client, m: Message):
                             continue
                           
                 elif 'encrypted.m' in url: 
-                   Show =(  f'<blockquote> 🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀 {progress:.2f}%</blockquote>\n\n'
+                   Show =(  f'<blockquote> 🚀 🅿︎🆁︎🅾︎🅶︎🆁︎🅴︎🆂︎🆂︎ 🚀 </blockquote>\n\n'
                            f'**┠📊 Tᴏᴛᴀʟ Lɪɴᴋs =** **{len(links)}**\n'
                            f'**┠⚡ Cᴜʀʀᴇɴᴛʟʏ Oɴ =** **{str(count)}**\n'
                            f'**┠⏳ RᴇⓂ︎ᴀɪɴɪɴɢ Lɪɴᴋs =** **{remaining_links}**\n'
@@ -727,7 +727,7 @@ async def account_login(bot: Client, m: Message):
                    continue  
 
                 elif 'drmcdni' in url or 'drm/wv' in url:
-                    Show =(  f'<blockquote> 🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀 {progress:.2f}%</blockquote>\n\n'
+                    Show =(  f'<blockquote> 🚀 🅿︎🆁︎🅾︎🅶︎🆁︎🅴︎🆂︎🆂︎ 🚀 </blockquote>\n\n'
                            f'**┠📊 Tᴏᴛᴀʟ Lɪɴᴋs =** **{len(links)}**\n'
                            f'**┠⚡ Cᴜʀʀᴇɴᴛʟʏ Oɴ =** **{str(count)}**\n'
                            f'**┠⏳ RᴇⓂ︎ᴀɪɴɪɴɢ Lɪɴᴋs =** **{remaining_links}**\n'
@@ -755,7 +755,7 @@ async def account_login(bot: Client, m: Message):
 
            
                 else:
-                    Show =(  f'<blockquote> 🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀 {progress:.2f}%</blockquote>\n\n'
+                    Show =(  f'<blockquote> 🚀 🅿︎🆁︎🅾︎🅶︎🆁︎🅴︎🆂︎🆂︎ 🚀 </blockquote>\n\n'
                            f'**┠📊 Tᴏᴛᴀʟ Lɪɴᴋs =** **{len(links)}**\n'
                            f'**┠⚡ Cᴜʀʀᴇɴᴛʟʏ Oɴ =** **{str(count)}**\n'
                            f'**┠⏳ RᴇⓂ︎ᴀɪɴɪɴɢ Lɪɴᴋs =** **{remaining_links}**\n'
