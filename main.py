@@ -173,7 +173,7 @@ async def account_login(bot: Client, m: Message):
     
 <b>You can have access to download all Non-DRM+Decrypted DRM Bot 🔐 including:</b>
 <blockquote><i>
-   ```• 🔗 Link Types
+   • 🔗 Link Types
    • 📚 Appx Zip
    • 🎓 Classplus DRM+ NDRM
    • 🧑‍🏫 PhysicsWallah DRM
@@ -186,7 +186,7 @@ async def account_login(bot: Client, m: Message):
    • 🎓 Visionias Protection
    • 🎓 Zoom Video
    • 🎓 All Non DRM+DEC DRM
-   • 🎓 MPD URLs if the key is known (e.g., Mpd_url?key=key XX:XX)```
+   • 🎓 MPD URLs if the key is known (e.g., Mpd_url?key=key XX:XX)
 </blockquote></i>
 <b>🚀 You are not subscribed to any plan yet!</b>
 
