@@ -706,10 +706,10 @@ async def account_login(bot: Client, m: Message):
                            f'**┠📊 Tᴏᴛᴀʟ Lɪɴᴋs =** **{len(links)}**\n'
                            f'**┠⚡ Cᴜʀʀᴇɴᴛʟʏ Oɴ =** **{str(count)}**\n'
                            f'**┠📟 Rᴇsᴏʟᴜᴛɪᴏɴ =** **{raw_text2}**\n'
-                           f'**┠🖼️ Tʜᴜᴍʙɴᴀɪʟ =** **{raw_text2}**\n'
-                           f'**┠🏫 🅒︎ᴏᴀᴄʜɪⓃ︎G 🅝︎ᴀⓂ︎Ⓔ︎ =** **{MR}**\n\n'
+                           f'**┠🖼️ Tʜᴜᴍʙɴᴀɪʟ =** `{input6.text}`\n'
                            f'**📤 🅓︎Ⓞ︎🅦︎Ⓝ︎🅛︎Ⓞ︎🅐︎Ⓓ︎🅘︎Ⓝ︎🅖︎! 📤**\n\n'
                            f'<blockquote> **🎓 🅑︎ᴀᴛᴄH 🅝︎ᴀⓂ︎E =** **`{b_name}`**</blockquote>\n\n'
+                           f'**🏫 🅒︎ᴏᴀᴄʜɪⓃ︎G 🅝︎ᴀⓂ︎Ⓔ︎ =** **{MR}**\n\n'
                            f'**⏳ 𝕌ᴘʟᴏᴀᴅɪɴɢ 𝕐ᴏᴜʀ 𝕍ɪᴅᴇᴏ𝕤 Ⓜ︎ᴀʏ 𝕋ᴀᴋᴇ 𝕊ᴏⓂ︎ᴇ 𝕋ɪⓂ︎ᴇ ⏳**\n\n'
                            f'**╭━━━━━━━━━◆✯◆━━━━━━━━━╮\n☠️ Ⓜ︎🅰︎🅓︎Ⓔ︎ 🅱︎Ⓨ︎ : [...🅧︎Ⓨ︎🅩.... 🦁](t.me/XYZOFFICALBOT)\n╰━━━━━━━━━◇✯◇━━━━━━━━━╯**\n\n')
                    prog = await m.reply_text(Show)
@@ -730,10 +730,10 @@ async def account_login(bot: Client, m: Message):
                            f'**┠📊 Tᴏᴛᴀʟ Lɪɴᴋs =** **{len(links)}**\n'
                            f'**┠⚡ Cᴜʀʀᴇɴᴛʟʏ Oɴ =** **{str(count)}**\n'
                            f'**┠📟 Rᴇsᴏʟᴜᴛɪᴏɴ =** **{raw_text2}**\n'
-                           f'**┠🖼️ Tʜᴜᴍʙɴᴀɪʟ =** **{raw_text2}**\n'
-                           f'**┠🏫 🅒︎ᴏᴀᴄʜɪⓃ︎G 🅝︎ᴀⓂ︎Ⓔ︎ =** **{MR}**\n\n'
+                           f'**┠🖼️ Tʜᴜᴍʙɴᴀɪʟ =** `{input6.text}`\n'
                            f'**📤 🅓︎Ⓞ︎🅦︎Ⓝ︎🅛︎Ⓞ︎🅐︎Ⓓ︎🅘︎Ⓝ︎🅖︎! 📤**\n\n'
                            f'<blockquote> **🎓 🅑︎ᴀᴛᴄH 🅝︎ᴀⓂ︎E =** **`{b_name}`**</blockquote>\n\n'
+                           f'**🏫 🅒︎ᴏᴀᴄʜɪⓃ︎G 🅝︎ᴀⓂ︎Ⓔ︎ =** **{MR}**\n\n'
                            f'**⏳ 𝕌ᴘʟᴏᴀᴅɪɴɢ 𝕐ᴏᴜʀ 𝕍ɪᴅᴇᴏ𝕤 Ⓜ︎ᴀʏ 𝕋ᴀᴋᴇ 𝕊ᴏⓂ︎ᴇ 𝕋ɪⓂ︎ᴇ ⏳**\n\n'
                            f'**╭━━━━━━━━━◆✯◆━━━━━━━━━╮\n☠️ Ⓜ︎🅰︎🅓︎Ⓔ︎ 🅱︎Ⓨ︎ : [...🅧︎Ⓨ︎🅩.... 🦁](t.me/XYZOFFICALBOT)\n╰━━━━━━━━━◇✯◇━━━━━━━━━╯**\n\n')
                     prog = await m.reply_text(Show)
@@ -757,10 +757,10 @@ async def account_login(bot: Client, m: Message):
                            f'**┠📊 Tᴏᴛᴀʟ Lɪɴᴋs =** **{len(links)}**\n'
                            f'**┠⚡ Cᴜʀʀᴇɴᴛʟʏ Oɴ =** **{str(count)}**\n'
                            f'**┠📟 Rᴇsᴏʟᴜᴛɪᴏɴ =** **{raw_text2}**\n'
-                           f'**┠🖼️ Tʜᴜᴍʙɴᴀɪʟ =** **{raw_text2}**\n'
-                           f'**┠🏫 🅒︎ᴏᴀᴄʜɪⓃ︎G 🅝︎ᴀⓂ︎Ⓔ︎ =** **{MR}**\n\n'
+                           f'**┠🖼️ Tʜᴜᴍʙɴᴀɪʟ =** `{input6.text}`\n'
                            f'**📤 🅓︎Ⓞ︎🅦︎Ⓝ︎🅛︎Ⓞ︎🅐︎Ⓓ︎🅘︎Ⓝ︎🅖︎! 📤**\n\n'
                            f'<blockquote> **🎓 🅑︎ᴀᴛᴄH 🅝︎ᴀⓂ︎E =** **`{b_name}`**</blockquote>\n\n'
+                           f'**🏫 🅒︎ᴏᴀᴄʜɪⓃ︎G 🅝︎ᴀⓂ︎Ⓔ︎ =** **{MR}**\n\n'
                            f'**⏳ 𝕌ᴘʟᴏᴀᴅɪɴɢ 𝕐ᴏᴜʀ 𝕍ɪᴅᴇᴏ𝕤 Ⓜ︎ᴀʏ 𝕋ᴀᴋᴇ 𝕊ᴏⓂ︎ᴇ 𝕋ɪⓂ︎ᴇ ⏳**\n\n'
                            f'**╭━━━━━━━━━◆✯◆━━━━━━━━━╮\n☠️ Ⓜ︎🅰︎🅓︎Ⓔ︎ 🅱︎Ⓨ︎ : [...🅧︎Ⓨ︎🅩.... 🦁](t.me/XYZOFFICALBOT)\n╰━━━━━━━━━◇✯◇━━━━━━━━━╯**\n\n')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
                     prog = await m.reply_text(Show)  
