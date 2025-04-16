@@ -299,16 +299,53 @@ async def download_video(url,cmd, name):
     except FileNotFoundError as exc:   
         return os.path.isfile.splitext[0] + "." + "mp4"   
    
-async def send_doc(bot: Client, m: Message,cc,ka,cc1,prog,count,name):   
-    reply = await m.reply_text(f"Uploading - `{name}`")   
-    time.sleep(1)   
-    start_time = time.time()   
-    await m.reply_document(ka,caption=cc1)   
-    count+=1   
-    await reply.delete (True)   
-    time.sleep(1)   
-    os.remove(ka)   
-    time.sleep(2)
+async def send_doc(bot: Client, m: Message,cc,ka,cc1,prog,count,name):
+    reply = await m.reply_text(f"**📤 🅤︎Ⓟ︎🅛︎Ⓞ︎🅐︎Ⓓ︎🅘︎Ⓝ︎🅖︎....**\n\n **📦 🅣︎ɪᴛʟⒺ︎ =`{name}`**\n\n**╭━━━━━━━━━◆✯◆━━━━━━━━━╮**\n**⚡ MADE BY : ...🅧︎Ⓨ︎🅩... 🦁**\n**╰━━━━━━━━━━━━━◆✯◆━━━━━━━━━━━━━╯**")
+    time.sleep(1)
+    start_time = time.time()
+    await m.reply_document(ka,caption=cc1)
+    count+=1
+    await reply.delete (True)
+    time.sleep(1)
+    os.remove(ka)
+    time.sleep(3) 
+
+async def send_vid(bot: Client, m: Message, cc, filename, thumb, name, prog):
+    # Generate a thumbnail
+    subprocess.run(f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"', shell=True)
+    await prog.delete(True)
+    reply = await m.reply_text(f"**📤 🅤︎Ⓟ︎🅛︎Ⓞ︎🅐︎Ⓓ︎🅘︎Ⓝ︎🅖︎....**\n\n **📦 🅣︎ɪᴛʟⒺ︎ =`{name}`**\n\n**╭━━━━━━━━━◆✯◆━━━━━━━━━╮**\n**⚡ MADE BY : ...🅧︎Ⓨ︎🅩... 🦁**\n**╰━━━━━━━━━━━━━◆✯◆━━━━━━━━━━━━━╯**")
+
+    try:
+        if thumb == "no":
+            thumbnail = f"{filename}.jpg"
+        else:
+            thumbnail = thumb
+    except Exception as e:
+        await m.reply_text(str(e))
+
+    # Add watermark text overlay to the video with black color and 20% opacity
+    watermarked_filename = f"watermarked_{filename}"
+    watermark_text = "🤖 🅑︎Ⓞ︎🅣︎...☠️"
+    subprocess.run(
+        f'ffmpeg -i "{filename}" -vf "drawtext=text=\'{watermark_text}\':fontcolor=black@0.2:fontsize=24:x=(w-text_w)/2:y=(h-text_h)/2" -codec:a copy "{watermarked_filename}"', 
+        shell=True
+    )
+
+    dur = int(duration(watermarked_filename))
+    processing_msg = await m.reply_text(emoji)
+
+    start_time = time.time()
+
+    try:
+        await m.reply_video(watermarked_filename, caption=cc, supports_streaming=True, height=720, width=1280, thumb=thumbnail, duration=dur, progress=progress_bar, progress_args=(reply, start_time))
+    except Exception:
+        await m.reply_document(watermarked_filename, caption=cc, progress=progress_bar, progress_args=(reply, start_time))
+
+    os.remove(watermarked_filename)
+    os.remove(f"{filename}.jpg")
+    await processing_msg.delete(True)
+    await reply.delete(True)
 
 def decrypt_file(file_path, key):  
     if not os.path.exists(file_path): 
@@ -379,7 +416,7 @@ async def send_vid(bot: Client, m: Message,cc,filename,thumb,name,prog):
     emoji = get_next_emoji()
     subprocess.run(f'ffmpeg -i "{filename}" -ss 00:00:02 -vframes 1 "{filename}.jpg"', shell=True)   
     await prog.delete (True)   
-    reply = await m.reply_text(f"**📤 🅤︎Ⓟ︎🅛︎Ⓞ︎🅐︎Ⓓ︎🅘︎Ⓝ︎🅖︎....**\n\n **📦 🅣︎ɪᴛʟⒺ︎ =`{name}`**\n\n**╭━━━━━━━━━◆✯◆━━━━━━━━━╮**\n**⚡ MADE BY : ...🅧︎Ⓨ︎🅩... 🦁**\n**╰━━━━━━━━━◆✯◆━━━━━━━━━╯**")   
+    reply = await m.reply_text(f"**📤 🅤︎Ⓟ︎🅛︎Ⓞ︎🅐︎Ⓓ︎🅘︎Ⓝ︎🅖︎....**\n\n **📦 🅣︎ɪᴛʟⒺ︎ =`{name}`**\n\n**╭━━━━━━━━━◆✯◆━━━━━━━━━╮**\n**⚡ MADE BY : ...🅧︎Ⓨ︎🅩... 🦁**\n**╰━━━━━━━━━━━━━◆✯◆━━━━━━━━━━━━━╯**")   
     try:   
         if thumb == "no":   
             thumbnail = f"{filename}.jpg"   
@@ -402,58 +439,3 @@ async def send_vid(bot: Client, m: Message,cc,filename,thumb,name,prog):
     os.remove(f"{filename}.jpg")
     await processing_msg.delete(True)
     await reply.delete (True) 
-
-
-async def watermark_pdf(file_path, watermark_text):
-    def create_watermark(text):
-        """Create a PDF watermark using ReportLab."""
-        packet = BytesIO()
-        can = canvas.Canvas(packet, pagesize=letter)
-
-        # Page dimensions
-        width, height = letter
-
-        # Set font, size, and color
-        can.setFont("Helvetica", 40)
-        can.setFillColorRGB(0.6, 0.6, 0.6, alpha=0.5)  # Semi-transparent gray
-
-        # Rotate canvas and draw text in center
-        can.saveState()
-        can.translate(width / 2, height / 2)
-        can.rotate(45)
-
-        # Split text into lines
-        lines = text.split('\n')
-        line_height = 50  # Adjust line spacing
-        for i, line in enumerate(lines):
-            text_width = can.stringWidth(line, "Helvetica", 40)
-            can.drawString(-text_width / 2, -i * line_height, line)
-
-        can.restoreState()
-        can.save()
-        packet.seek(0)
-        return PdfReader(packet)
-
-    # Create watermark PDF
-    watermark = create_watermark(watermark_text)
-    reader = PdfReader(file_path)
-    writer = PdfWriter()
-
-    # Add watermark to each page
-    for page_num in range(len(reader.pages)):
-        page = reader.pages[page_num]
-        watermark_page = watermark.pages[0]
-        page.merge_page(watermark_page)
-        writer.add_page(page)
-
-    # Output file
-    new_file_path = file_path.replace(".pdf", "_.pdf")
-    with open(new_file_path, 'wb') as out_file:
-        writer.write(out_file)
-
-    # Delete the original file
-    os.remove(file_path)
-
-    return new_file_path
-       
-   
