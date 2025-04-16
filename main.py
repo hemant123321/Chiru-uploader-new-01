@@ -377,51 +377,6 @@ async def remove_all_channels(client, message: Message):
     # Clear the channels data
     write_channels_data([])
     await message.reply_text("✅ **All Channels/Groups have been removed successfully.**")
-
-# Sudo command to add/remove sudo users
-@bot.on_message(filters.command("sudo"))
-async def sudo_command(bot: Client, message: Message):
-    user_id = message.chat.id
-    if user_id != OWNER_ID:
-        await message.reply_text("**🚫 You are not authorized to use this command.**")
-        return
-
-    try:
-        args = message.text.split(" ", 2)
-        if len(args) < 2:
-            await message.reply_text("**Usage:** `/sudoadd <user_id>` or `/sudoremove <user_id>`")
-            return
-
-        action = args[1].lower()
-        target_user_id = int(args[2])
-
-        if action == "add":
-            if target_user_id not in SUDO_USERS:
-                SUDO_USERS.append(target_user_id)
-                await message.reply_text(f"**✅ User {target_user_id} added to sudo list.**")
-            else:
-                await message.reply_text(f"**⚠️ User {target_user_id} is already in the sudo list.**")
-        elif action == "remove":
-            if target_user_id == OWNER_ID:
-                await message.reply_text("**🚫 The owner cannot be removed from the sudo list.**")
-            elif target_user_id in SUDO_USERS:
-                SUDO_USERS.remove(target_user_id)
-                await message.reply_text(f"**✅ User {target_user_id} removed from sudo list.**")
-            else:
-                await message.reply_text(f"**⚠️ User {target_user_id} is not in the sudo list.**")
-        else:
-            await message.reply_text("**Usage:** `/sudoadd <user_id>` or `/sudoremove <user_id>`")
-    except Exception as e:
-        await message.reply_text(f"**Error:** {str(e)}")
-
-# List users command
-@bot.on_message(filters.command("userlist") & filters.user(SUDO_USERS))
-async def list_users(client: Client, msg: Message):
-    if SUDO_USERS:
-        users_list = "\n".join([f"User ID : `{user_id}`" for user_id in SUDO_USERS])
-        await msg.reply_text(f"SUDO_USERS :\n{users_list}")
-    else:
-        await msg.reply_text("No sudo users.")
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 @bot.on_message(filters.command("stop"))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 async def restart_handler(_, m):                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
